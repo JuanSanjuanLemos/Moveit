@@ -1,0 +1,106 @@
+@use '../../colors' as c;
+
+.challengeBoxContainer{
+    height: 100%;
+
+    background-color: c.$white;
+    border-radius: 5px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.05);
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.challengeNotActive{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    strong{
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 70%;
+    }
+    p{
+        display: flex;
+        align-items: center;
+        line-height: 1.4;
+        max-width: 70%;
+        margin-top: 3rem;
+        img{
+            width: 2rem;
+        }
+    }
+}
+
+.challengeActive{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    header{
+        color: c.$blue;
+        font-weight: 600;
+        font-size: 1.25rem;
+        padding: 0 2rem 1.5rem;
+        border-bottom: 1px solid c.$gray-line;
+    }
+
+    main{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        strong{
+            font-size: 2rem;
+            font-weight: 600;
+            color: c.$title;
+            margin: 1.5rem 0 1rem;
+        }
+
+        p{
+            line-height: 1.5;
+        }
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        button{
+            height: 3rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: 5px;
+            
+            color: c.$white;
+            font-size: 1rem;
+            font-weight: 600;
+
+            transition: filter 0.2s;
+            
+            &.challengeFailedButton{
+                background-color: c.$red;
+            }
+
+            &.challengeSucceededButton{
+                background-color: c.$green;
+            }
+
+            &:hover{
+                filter: brightness(0.9);
+            }
+        }
+    }
+}
